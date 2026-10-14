@@ -96,7 +96,11 @@ BRIDGE = "backend/scripts/disc-introspection-mcp.py"
 # KT-1104: `page_delete_dataset` was paid for by tightening the page family
 # and `convention_get` descriptions; re-measured on the 0.15.0 integration
 # head: exactly 85_341 B.
-CATALOGUE_MAX_BYTES = 85_341
+# #241: `task_exec_review` says where the identity comes from (the room's
+# native agent during its own turn, else the joined CLI session), paid for
+# inside its own declaration: the `decision` fields its schema already lists
+# left the description. Re-measured: exactly 85_283 B; ceiling lowered by 58 B.
+CATALOGUE_MAX_BYTES = 85_283
 
 # Per-declaration ceiling. The five heaviest tools were 29% of the catalogue for
 # 6% of the tools; their descriptions had grown into manuals. A per-tool cap is
